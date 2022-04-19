@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {overflow: hidden; }
+
+header{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    height: 10vh;
+    align-items: center;
+}
+
+.logo-container, .nav-links, .cart{
+    display: flex;
+}
+
+.logo-container{
+    flex: 1;
+}
+
+.logo{
+    font-weight: 400;
+    margin: 5px;
+}
+
+nav{
+    flex: 2;
+}
+
+.nav-links{
+    justify-content: space-around;
+    list-style: none;
+}
+
+.nav-link {
+    color: gray;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.cart {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.presentation {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    min-height: 80vh;
+    align-items: center;
+}
+
+.introduction{
+    flex: 1;
+}
+
+.intro-text h1{
+    font-size: 44px;
+    font-weight: 500;
+    background: linear-gradient(to right, #494964, #6f6f89);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-text p{
+    margin-top: 5px;
+    font-size: 22px;
+    color: #585772;
+}
+
+.cta{
+    padding: 50px 0px 0px 0px; /*Abreviação segue o sentido horário do relógio*/
+}
+
+.cta-select{
+    border: 2px solid #c36cbb ;
+    background: transparent;
+    color: #c36cbb;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cta-add{
+    background: #c36cbb;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    color: white;
+    margin: 20px 0px 0px 30px;
+}
+
+.cover{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+}
+
+.cover img{
+    height: 100%;
+    filter: drop-shadow(0px 5px 3px black);
+    animation: drop 1.5s ease;
+}
+
+.big-circle{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: -1;
+    opacity: 0.5;
+    height: 80%;
+}
+
+.mid-circle{
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    z-index: -1;
+    height: 60%;
+    opacity: 0.4;
+}
+
+.small-circle{
+    position: absolute;
+    bottom: 0%;
+    left: 20%;
+    z-index: -1;
+    height: 35%;
+}
+
+.laptop-select{
+    bottom: 7%;
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    right: 20%;
+}
+
+iframe{
+    bottom: 7%;
+    width: 15%;
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+@keyframes drop{
+    0%{
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@media screen and (max-width: 700px){
+    .presentation{
+        flex-direction: column;
+    }
+    .introduction{
+        margin-top: 5vh;
+        text-align: center;
+    }
+
+    .intro-text h1{
+        font-size: 30px;
+    }
+    .intro-text p{
+        font-size: 18px;
+
+    }
+
+    .cta{
+        padding: 10px 0px 0px 0px;
+    }
+
+    .laptop-select{
+        bottom: 5%;
+        right: 50%;
+        width: 50%;
+        transform: translate(50%, 5%);
+    }
+
+    .cover img{
+        height: 28%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="./img2/logo.svg" alt="logo">
+            <h4 class="Logo">Three Dots</h4>
+        </div>
+        <nav>
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul class="nav-links">
+                <li><a class="nav-link" href="#">Specs</a></li>
+                <li><a class="nav-link" href="#">Products</a></li>
+                <li><a class="nav-link" href="#">Content</a></li>
+            </ul>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="cart">
+            <img src="./img2/cart.svg" alt="cart"/>
+        </div>
+    </header>
+
+    <main>
+        <section class="presentation">
+            <div class="introduction">
+                <div class="intro-text">
+                    <h1>Laptop for the future</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+                <div class="cta">
+                    <button class="cta-select">14 Polegadas</button>
+                    <button class="cta-add">Add To Cart</button>
+                </div>
+            </div>
+            <div class="cover">
+                <img src="./img2/matebook.png" alt="matebook">
+            </div>
+        </section>
+
+        <div class="laptop-select">
+            <img src="./img2/arrow-left.svg" alt="">
+            <img src="./img2/dot-full.svg" alt="">
+            <img src="./img2/dot-full.svg" alt="">
+            <img src="./img2/dot.svg" alt="">
+            <img src="./img2/arrow-right.svg" alt="">
+        
+            
+        </div>
+
+        <img class="big-circle" src="./img2/big-eclipse.svg">
+        <img class="mid-circle" src="./img2/mid-eclipse.svg">
+        <img class="small-circle" src="./img2/small-eclipse.svg">
+    </main>
+
+    <script>
+        var navLinks = document.getElementById("navLinks")
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+
+    </script>
+
+</body>
+</html>
